@@ -1,0 +1,44 @@
+{
+    "intents": [
+        {
+            "tag": "age",
+            "patterns": [
+                
+                "Age [NOM]"
+            ],
+            "responses": [
+                "[NOM] a [AGE] ans.",
+                "L'âge de [NOM] est [AGE].",
+                "[AGE] ans",
+                "[AGE]"
+            ]
+        },
+        {
+            "tag": "localisation",
+            "patterns": [
+                "Où habite [NOM] ?",
+                "Où se trouve [NOM] ?",
+                "Quelle est la localisation de [NOM] ?",
+                "Quelle est l'adresse de [NOM] ?"
+            ],
+            "responses": [
+                "[NOM] habite à [VILLE].",
+                "[VILLE]",
+                "La localisation de [NOM] est [VILLE]."
+            ]
+        },
+        {
+            "tag": "profession",
+            "patterns": [
+                "Quel est le travail de [NOM] ?",
+                "Quelle est la profession de [NOM] ?",
+                "Travail de [NOM]",
+                "Profession de [NOM]"
+            ],
+            "responses": [
+                "[NOM] est [PROFESSION].",
+                "[PROFESSION]"
+            ]
+        }
+    ]
+}

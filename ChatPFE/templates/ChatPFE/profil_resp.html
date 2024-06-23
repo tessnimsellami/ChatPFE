@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ChatPFE/style_profil_resp.css' %}">
+    
+    <title></title>
+
+
+</head>
+<body>
+    <h1></h1>
+
+    <form action="{% url 'gérer_ques_resp_et' %}" method="get">
+        <button type="submit">Gérer Questions/Réponses des Etudiants</button>
+    </form>
+
+    <form action="{% url 'gérer_ques_resp_en' %}" method="get">
+        <button type="submit">Gérer Questions/Réponses des Encadrants</button>
+    </form>
+
+    <form action="{% url 'list_etudiants' %}" method="get">
+        <button type="submit">Gérer Étudiant</button>
+    </form>
+
+    <form action="{% url 'list_encadrants' %}" method="get">
+        <button type="submit">Gérer Encadrant</button>
+    </form>
+    
+    <form action="{% url 'list_resp_ad' %}" method="get">
+        <button type="submit">Gérer Responsable administratif</button>
+    </form>
+
+    <form action="{% url 'modification_mot_de_passe' %}" method="get">
+        <button type="submit">Modifier le mot de passe</button>
+    </form>
+
+    
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Déconnexion</button>
+    </form>
+    
+</body>
+</html>
+
+
+

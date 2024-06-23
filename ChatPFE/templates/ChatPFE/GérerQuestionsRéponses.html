@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intents</title>
+</head>
+<body>
+    <form action="{% url 'list_etudiants' %}" method="get">
+        <button type="submit">Gérer Étudiant</button>
+    </form>
+
+    <form action="{% url 'list_encadrants' %}" method="get">
+        <button type="submit">Gérer Encadrant</button>
+    </form>
+    
+    <form action="{% url 'list_resp_ad' %}" method="get">
+        <button type="submit">Gérer Responsable administratif</button>
+    </form>
+
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Déconnexion</button>
+    </form>
+    <h1>Intents</h1>
+    <ul>
+        <form action="{% url 'ajouter_question_reponse' %}" method="get">
+            <button type="submit">Ajouter</button>
+        </form>
+        <form action="{% url 'modifier_question_reponse' %}" method="post">
+            {% csrf_token %}
+            <label for="tag">Tag de l'intent:</label>
+            <input type="text" id="tag" name="tag" required>
+            <button type="submit">Modifier</button>
+        </form>
+        {% for intent in intents %}
+            <li>
+                <h2>{{ intent.tag }}</h2>
+                <h3>Questions</h3>
+                <ul>
+                    {% for pattern in intent.patterns %}
+                        <li>{{ pattern }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Réponses</h3>
+                <ul>
+                    {% for response in intent.responses %}
+                        <li>{{ response }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        
+    </ul>
+</body>
+</html>

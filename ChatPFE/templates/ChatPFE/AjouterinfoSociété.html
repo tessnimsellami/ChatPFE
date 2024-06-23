@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Informations Société</title>
+</head>
+<body>
+    <h1>Ajouter Informations Société</h1>
+    <form id="studentForm" action="{% url 'enregistrer_info_société' %}" method="post">
+        {% csrf_token %}
+        <label for="matricule">Matricule :</label>
+        <input type="text" id="matricule" name="matricule" required><br><br>
+        
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        
+        <label for="localisation">Localisation :</label>
+        <input type="text" id="localisation" name="localisation" required><br><br>
+        
+        <label for="domaine">Domaine :</label>
+        <input type="text" id="domaine" name="domaine" required><br><br>
+        
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" required><br><br>
+        
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="linkedin">LinkedIn :</label>
+        <input type="url" id="linkedin" name="linkedin"><br><br>
+
+        <label for="mode_travail">Mode DE travail :</label>
+        <input type="text" id="mode_travail" name="mode_travail"><br><br>
+        
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <form action="{% url 'gérer_info_société' %}" method="get">
+        <button type="submit">Terminer l'ajout</button>
+    </form>
+
+</body>
+</html>

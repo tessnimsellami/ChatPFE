@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Consulter étudiant</title>
+
+
+</head>
+<body>
+    <h1>Consulter étudiant</h1>
+
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Déconnexion</button>
+    </form>   
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Numéro CIN</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Spécialité</th>
+                <th>Expérience</th>
+                <th>ville</th>
+                <th>Email</th>
+                <th>Quota</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ encadrant.cin }}</td>
+                <td>{{ encadrant.nom }}</td>
+                <td>{{ encadrant.prenom }}</td>
+                <td>{{ encadrant.spécialité }}</td>
+                <td>{{ encadrant.expérience }}</td>
+                <td>{{ encadrant.ville }}</td>
+                <td>{{ encadrant.email }}</td>
+                <td>{{ encadrant.quota }}</td>
+                <td>                  
+                    <form action="{% url 'modifier_info_encadrant' encadrant.cin %}" method="get">
+                        <button type="submit" class="btn btn-warning">Modifier</button>
+                    </form>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete('{{ encadrant.cin }}')">Supprimer</button>                 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Voulez-vous vraiment effectuer la suppression ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+              <form id="deleteForm" method="post" action="">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger">Supprimer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script>
+          function confirmDelete(cin) {
+              var deleteForm = document.getElementById('deleteForm');
+              deleteForm.action = "{% url 'supprimer_info_encadrant' 'cin_placeholder' %}".replace('cin_placeholder', cin);
+              $('#confirmDeleteModal').modal('show');
+          }
+
+      </script>
+</body>
+</html>
+

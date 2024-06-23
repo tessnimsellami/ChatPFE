@@ -1,0 +1,40 @@
+{
+    "Stage": [
+        {
+            "id_sujet": "ST123",
+            "description": "Analyse des données massives",
+            "domaine": "Data Science",
+            "société": "DataCorp",
+            "encadrant": "Dr. John Doe",
+            "remarque": "Excellent travail",
+            "remarque_sout": ["Très Bien", "edffvd hnjet"]
+        },
+        {
+            "id_sujet": "ST128",
+            "description": "Analyse des données",
+            "domaine": "Data Science",
+            "société": "DataCorp",
+            "encadrant": "Dr. John Doe",
+            "remarque": "Excellent travail",
+            "remarque_sout": ["Très Bien", "edffvd hnjet"]
+        },
+        {
+            "id_sujet": "ST124",
+            "description": "Création d'un site e-commerce",
+            "domaine": "Développement Web",
+            "société": "WebSolutions",
+            "encadrant": "Jane Smith",
+            "remarque": "Bon travail",
+            "remarque_sout": [" Bien", "edffvd hnjet"]
+        },
+        {
+            "id_sujet": "ST125",
+            "description": "Audit de sécurité réseau",
+            "domaine": "Cybersécurité",
+            "société": "SecureTech",
+            "encadrant": "Albert Einstein",
+            "remarque": "Travail satisfaisant",
+            "remarque_sout": ["Très ", "edffvd hnjet"]
+        }
+    ]
+}

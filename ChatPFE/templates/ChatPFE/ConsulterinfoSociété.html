@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Consulter société</title>
+
+
+</head>
+<body>
+    <h1>Consulter société</h1>
+
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Déconnexion</button>
+    </form>   
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>Nom</th>
+                <th>Localisation</th>
+                <th>Domaine</th>
+                <th>Numéro de téléphone</th>
+                <th>Email</th>
+                <th>Linkedin</th>
+                <th>mode_travail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ société.matricule }}</td>
+                <td>{{ société.nom }}</td>
+                <td>{{ société.localisation }}</td>
+                <td>{{ société.domaine }}</td>
+                <td>{{ société.telephone }}</td>
+                <td>{{ société.email }}</td>
+                <td>{{ société.linkedin }}</td>
+                <td>{{ société.mode_travail }}</td>
+                <td>                  
+                    <form action="{% url 'modifier_info_société' société.matricule %}" method="get">
+                        <button type="submit" class="btn btn-warning">Modifier</button>
+                    </form>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete('{{ société.matricule }}')">Supprimer</button>                 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Voulez-vous vraiment effectuer la suppression ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+              <form id="deleteForm" method="post" action="">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger">Supprimer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script>
+          function confirmDelete(matricule) {
+              var deleteForm = document.getElementById('deleteForm');
+              deleteForm.action = "{% url 'supprimer_info_société' 'cin_placeholder' %}".replace('cin_placeholder', matricule);
+              $('#confirmDeleteModal').modal('show');
+          }
+
+      </script>
+</body>
+</html>
+

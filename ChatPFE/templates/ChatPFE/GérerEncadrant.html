@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Encadrants</title>
+
+    <form action="{% url 'gérer_ques_resp' %}" method="get">
+        <button type="submit">Gérer Questions/Réponses</button>
+    </form>
+
+    <form action="{% url 'list_etudiants' %}" method="get">
+        <button type="submit">Gérer Étudiant</button>
+    </form>
+    
+    <form action="{% url 'list_resp_ad' %}" method="get">
+        <button type="submit">Gérer Responsable administratif</button>
+    </form>
+
+    <form action="{% url 'gérer_profil' %}" method="get">
+        <button type="submit">Gérer Profil</button>
+    </form>
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Déconnexion</button>
+    </form>
+
+    <script>
+    function confirmerSuppression(cinEnca) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cet encadrant ? Cette action est irréversible.")) {
+            document.getElementById('form-supprimer-' + cinEnca).submit();
+        }
+    }
+
+    function confirmerSuppressionTous() {
+        if (confirm("Êtes-vous sûr de vouloir supprimer tous les encadrants ? Cette action est irréversible.")) {
+            document.getElementById('form-supprimer-tous').submit();
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Liste des encadrants</h1>
+    <table border="1">
+        <tr>
+            <th>CIN</th>
+            <th>Actions</th>
+        </tr>
+        {% for encadrant in encadrants %}
+        <tr>
+            <td>{{ encadrant.cin_enca }}</td>
+            <td>
+                <a href="{% url 'mod_encadrant' encadrant.cin_enca %}">
+                    <button>Modifier</button>
+                </a>
+                <button onclick="confirmerSuppression('{{ encadrant.cin_enca }}')">Supprimer</button>
+                <form id="form-supprimer-{{ encadrant.cin_enca }}" method="post" action="{% url 'delete_encadrant' encadrant.cin_enca %}" style="display: none;">
+                    {% csrf_token %}
+                    <input type="hidden" name="cin_enca" value="{{ encadrant.cin_enca }}">
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">Aucun encadrant trouvé.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="confirmerSuppressionTous()">Supprimer toute la liste</button>
+    <form id="form-supprimer-tous" method="post" action="{% url 'delete_all_encadrants' %}" style="display: none;">
+        {% csrf_token %}
+        <button type="submit">Supprimer toute la liste</button>
+    </form>
+</body>
+</html>

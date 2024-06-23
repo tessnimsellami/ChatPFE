@@ -1,0 +1,22 @@
+
+<!-- modify_intent.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Intent</title>
+</head>
+<body>
+    <h1>Modifier Intent</h1>
+    <form action="{% url 'modifier_question_reponse' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="tag" value="{{ intent.tag }}">
+        <label for="patterns">Questions (comma-separated):</label>
+        <input type="text" id="patterns" name="patterns" value="{{ intent.patterns|join:', ' }}"><br>
+        <label for="responses">Réponses (comma-separated):</label>
+        <input type="text" id="responses" name="responses" value="{{ intent.responses|join:', ' }}"><br>
+        <button type="submit">Modifier</button>
+    </form>
+</body>
+</html>
+

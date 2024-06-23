@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier étudiant</title>
+</head>
+<body>
+    <h1>Modifier étudiant</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="cin_etud">CIN: {{ etudiant.cin_etud }}</label><br>
+        <label for="password_etud">Mot de passe:</label>
+        <input type="text" id="password_etud" name="password_etud"><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

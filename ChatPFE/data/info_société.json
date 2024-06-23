@@ -1,0 +1,44 @@
+{
+    "Société": [
+        {
+            "matricule":"a",
+            "nom": "DataCorp",
+            "localisation": "Paris",
+            "domaine": "Cybersécurité",
+            "telephone": "0987654321",
+            "email": "contact@datacorp.com",
+            "linkedin": "",
+            "mode_travail": "Présentiel"
+        },
+        {
+            "matricule":"a",
+            "nom": "tasssouness",
+            "localisation": "Paris",
+            "domaine": "Cybersécurité",
+            "telephone": "77887791",
+            "email": "contact@tasssouness.com",
+            "linkedin": "",
+            "mode_travail": "Présentiel"
+        },
+        {
+            "matricule": "b",
+            "nom": "WebSolutions",
+            "localisation": "Lyon",
+            "domaine": "Développement Web",
+            "telephone": "0456789012",
+            "email": "info@websolutions.com",
+            "linkedin": "",
+            "mode_travail": "en ligne"
+        },
+        {
+            "matricule": "c",
+            "nom": "SecureTech",
+            "localisation": "Marseille",
+            "domaine": "Data Science",
+            "telephone": "0345678901",
+            "email": "support@securetech.com",
+            "linkedin": "https://linkedin.com/in/charlieleblanc",
+            "mode_travail": "Hybride"
+        }
+    ]
+}

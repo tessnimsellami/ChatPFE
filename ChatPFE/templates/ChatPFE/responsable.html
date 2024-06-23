@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatPFE</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ChatPFE/style_login.css' %}">
+</head>
+<body>
+    
+
+    <div class="container" id="form-container">
+        
+    
+
+        <div id="responsable-forms">
+            <!-- Formulaire des responsables -->
+            <div class="form-container sign-up">
+                <form method="post" action="{% url 'signup' %}">
+                    {% csrf_token %}
+                    <h1>Créer votre compte</h1>
+                    <input type="text" name="cin" placeholder="CIN" value="{{ cin }}" required/>
+                    <input type="text" name="nom" placeholder="Nom" value="{{ nom }}" required/>
+                    <input type="text" name="prenom" placeholder="Prénom" value="{{ prenom }}" required/>
+                    <input type="password" name="password" placeholder="Mot de passe" required/>
+                    <select name="role" required>
+                        <option value="responsable administratif" {% if role == 'responsable administratif' %}selected{% endif %}>Responsable Administratif</option>
+                        <option value="responsable" {% if role == 'responsable' %}selected{% endif %}>Responsable</option>
+                    </select>
+                    <input type="text" name="verification_code" id="verification_code" placeholder="Code de vérification"/>
+                    <button type="submit">Créer un compte</button>
+                    {% if error %}
+                        <p style="color:red;">{{ error }}</p>
+                    {% endif %}
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <h1>Se connecter</h1>
+                    <input type="text" name="cin" placeholder="CIN" required/>
+                    <input type="password" name="password" placeholder="Mot de passe" required/>
+                    <select name="role" required>
+                        <option value="responsable administratif">Responsable Administratif</option>
+                        <option value="responsable">Responsable</option>
+                    </select>
+                    <button type="submit">Se connecter</button>
+                    {% if error %}
+                        <p style="color:red;">{{ error }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bienvenu!</h1>
+                    <p>Entrez vos informations personnelles pour utiliser toutes les fonctionnalités du site</p>
+                    <button class="hidden" id="login">Se connecter</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Bienvenu!</h1>
+                    <p>Inscrivez-vous avec vos informations personnelles pour utiliser toutes les fonctionnalités du site</p>
+                    <button class="hidden" id="register">Créer un compte</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      
+        const formContainer = document.getElementById("form-container");
+        const responsableForms = document.getElementById("responsable-forms");
+        const registerUserBtn = document.getElementById("register");
+
+        document.querySelector('select[name="role"]').addEventListener('change', function() {
+            const verificationCodeInput = document.getElementById("verification_code");
+            if (this.value === "responsable administratif") {
+                verificationCodeInput.style.display = "block";
+            } else {
+                verificationCodeInput.style.display = "none";
+            }
+        });
+
+        registerUserBtn.addEventListener("click", () => {
+            formContainer.classList.add("active");
+        });
+
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click", () => {
+            formContainer.classList.remove("active");
+        });
+    </script>
+</body>
+</html>

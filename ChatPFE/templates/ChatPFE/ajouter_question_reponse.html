@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une question à l'intention par tag</title>
+</head>
+<body>
+    <h1>Ajouter une question à une intention par tag</h1>
+    <form method="post" action="{% url 'ajouter_question_reponse' %}">
+        {% csrf_token %}
+        <label for="tag">Tag de l'intention:</label><br>
+        <input type="text" id="tag" name="tag" required><br>
+        <label for="new_question">Nouvelle question:</label><br>
+        <input type="text" id="new_question" name="new_question" required><br>
+        <button type="submit">Ajouter Question</button>
+    </form>
+</body>
+</html>

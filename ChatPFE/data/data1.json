@@ -1,0 +1,17 @@
+{
+    "Ahmed": {
+        "age": 25,
+        "ville": "Paris",
+        "profession": "ingénieur",
+        "note": 15,
+        "remarque": "exelent"
+    },
+    "Jean": {
+        "age": 30,
+        "ville": "Lyon",
+        "profession": "enseignant",
+        "note": 17,
+        "remarque": "moyen"
+    }
+}
+

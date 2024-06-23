@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier étudiant</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1>Modifier étudiant</h1>
+
+    <ul id="info-etudiant">
+        <li><strong>Numéro CIN:</strong> {{etudiant.cin}}</li>
+        <li><strong>Nom:</strong> {{etudiant.nom}}</li>
+        <li><strong>Prénom:</strong> {{etudiant.prenom}}</li>
+        <li><strong>Moyenne:</strong> {{etudiant.moyenne}}</li>
+        <li><strong>Ville:</strong> {{etudiant.ville}}</li>
+        <li><strong>Niveau:</strong> {{etudiant.niveau}}</li>
+        <li><strong>Numéro de téléphone:</strong> {{etudiant.telephone}} <button id="btn-modifier-téléphone">Modifier numéro de téléphone</button></li>
+        <li><strong>Email:</strong> {{etudiant.email}} <button id="btn-modifier-email">Modifier Email</button></li>
+        <li><strong>Linkedin:</strong> {{etudiant.linkedin}}</li>
+        <li><strong>préférence:</strong> {{etudiant.préférence}}</li>
+    </ul>
+
+    <div class="card modifier-section" id="modifier-téléphone" style="display: none;">
+        <h2>Modifier Numéro de téléphone</h2>
+        <form action="{% url 'modifier_téléphone' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="cin" value="{{ etudiant.cin }}">
+            <label for="nouveau-téléphone">Nouveau téléphone:</label>
+            <input type="text" id="nouveau-téléphone" name="nouveau_téléphone">
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <div class="card modifier-section" id="modifier-email" style="display: none;">
+        <h2>Modifier Email</h2>
+        <form action="{% url 'modifier_email' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="cin" value="{{ etudiant.cin }}">
+            <label for="nouveau-email">Nouveau Email:</label>
+            <input type="email" id="nouveau-email" name="nouveau_email">
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Déconnexion</button>
+    </form> 
+    
+
+
+    <script>
+        $(document).ready(function() {
+            $('#btn-modifier-téléphone').click(function() {
+                $('#modifier-téléphone').show(); // Afficher ou cacher le formulaire de modification du numéro de téléphone
+            });
+
+            $('#btn-modifier-email').click(function() {
+                $('#modifier-email').show(); // Afficher ou cacher le formulaire de modification de l'email
+            });
+        });
+    </script>
+
+
+</body>
+</html>
+

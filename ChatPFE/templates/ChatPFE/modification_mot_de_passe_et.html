@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modification du mot de passe</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @media (max-width: 768px) {
+      .image-container {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 bg-gray-100 flex justify-center items-center min-h-screen py-6 px-4">
+
+<div class="grid md:grid-cols-2 items-center gap-4 max-w-7xl w-full">
+  <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full border border-gray-300 mx-auto">
+    <h2 class="text-2xl font-bold mb-6 text-center text-blue-500">Modification du mot de passe</h2>
+    <form action="{% url 'modification_mot_de_passe_et' %}" method="POST">
+      {% csrf_token %}
+      <div class="mb-4">
+        <label for="new_password1" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
+        <input type="password" id="new_password1" name="new_password1" required class="mt-1 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div class="mb-4">
+        <label for="new_password2" class="block text-sm font-medium text-gray-700">Confirmer le nouveau mot de passe</label>
+        <input type="password" id="new_password2" name="new_password2" required class="mt-1 px-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div>
+        <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none">Modifier le mot de passe</button>
+      </div>
+    </form>
+  </div>
+  <div class="lg:h-500 md:h-800 mt-10 image-container">
+    <img src="My password.png" class="w-full h-full object-cover rounded-lg" alt="Dining Experience">
+  </div>
+</div>
+
+</body>
+</html>

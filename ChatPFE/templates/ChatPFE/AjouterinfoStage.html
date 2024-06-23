@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Informations Stage</title>
+</head>
+<body>
+    <h1>Ajouter Informations Stage</h1>
+    <form id="studentForm" action="{% url 'enregistrer_info_stage' %}" method="post">
+        {% csrf_token %}
+        <label for="ID_Sujet">ID_Sujet :</label>
+        <input type="text" id="ID_Sujet" name="ID_Sujet" required><br><br>
+        
+        <label for="description">Description :</label>
+        <input type="text" id="description" name="description" required><br><br>
+        
+        <label for="domaine">Domaine :</label>
+        <input type="text" id="domaine" name="domaine" required><br><br>
+        
+        <label for="société">Société :</label>
+        <input type="text" id="société" name="société" required><br><br>
+        
+        <label for="encadrant">Encadrant :</label>
+        <input type="text" id="encadrant" name="encadrant" required><br><br>
+        
+        <label for="remarque">Remarque :</label>
+        <input type="text" id="remarque" name="remarque" required><br><br>
+        
+        <label for="remarque_sout">Remarque Sout :</label>
+        <input type="text" id="remarque_sout" name="remarque_sout"><br><br>
+        
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <form action="{% url 'gérer_info_stage' %}" method="get">
+        <button type="submit">Terminer l'ajout</button>
+    </form>
+
+</body>
+</html>

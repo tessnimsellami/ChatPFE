@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier encadrant</title>
+</head>
+<body>
+    <h1>Modifier encadrant</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="cin_enca">CIN: {{ encadrant.cin_enca }}</label><br>
+        <label for="password_enca">Mot de passe:</label>
+        <input type="text" id="password_enca" name="password_enca"><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

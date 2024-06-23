@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Étudiants</title>
+    <script>
+    function confirmerSuppression(cinEtud) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cet étudiant ? Cette action est irréversible.")) {
+            document.getElementById('form-supprimer-' + cinEtud).submit();
+        }
+    }
+
+    function confirmerSuppressionTous() {
+        if (confirm("Êtes-vous sûr de vouloir supprimer tous les étudiants ? Cette action est irréversible.")) {
+            document.getElementById('form-supprimer-tous').submit();
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Liste des étudiants</h1>
+
+    <form action="{% url 'gérer_ques_resp' %}" method="get">
+        <button type="submit">Gérer Questions/Réponses</button>
+    </form>
+
+    <form action="{% url 'list_encadrants' %}" method="get">
+        <button type="submit">Gérer Encadrant</button>
+    </form>
+    
+    <form action="{% url 'list_resp_ad' %}" method="get">
+        <button type="submit">Gérer Responsable administratif</button>
+    </form>
+
+    <form action="{% url 'gérer_profil' %}" method="get">
+        <button type="submit">Gérer Profil</button>
+    </form>
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Déconnexion</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>CIN</th>
+            <th>Actions</th>
+        </tr>
+        {% for etudiant in etudiants %}
+        <tr>
+            <td>{{ etudiant.cin_etud }}</td>
+            <td>
+                <a href="{% url 'mod_etudiant' etudiant.cin_etud %}">
+                    <button>Modifier</button>
+                </a>
+                <button onclick="confirmerSuppression('{{ etudiant.cin_etud }}')">Supprimer</button>
+                <form id="form-supprimer-{{ etudiant.cin_etud }}" method="post" action="{% url 'delete_etudiant' etudiant.cin_etud %}" style="display: none;">
+                    {% csrf_token %}
+                    <input type="hidden" name="cin_etud" value="{{ etudiant.cin_etud }}">
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">Aucun étudiant trouvé.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="confirmerSuppressionTous()">Supprimer toute la liste</button>
+    <form id="form-supprimer-tous" method="post" action="{% url 'delete_all_etudiants' %}" style="display: none;">
+        {% csrf_token %}
+        <button type="submit">Supprimer toute la liste</button>
+    </form>
+</body>
+</html>

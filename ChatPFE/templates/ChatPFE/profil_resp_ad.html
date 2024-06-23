@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ChatPFE/style_profil_resp.css' %}">
+    
+    <title></title>
+
+
+</head>
+<body>
+    <h1></h1>
+
+    <form action="{% url 'gérer_info_étudiant' %}" method="get">
+        <button type="submit">Gérer Étudiant</button>
+    </form>
+
+    <form action="{% url 'gérer_info_encadrant' %}" method="get">
+        <button type="submit">Gérer Encadrant</button>
+    </form>
+    
+    <form action="{% url 'gérer_info_société' %}" method="get">
+        <button type="submit">Gérer Société</button>
+    </form>
+
+    <form action="{% url 'gérer_info_stage' %}" method="get">
+        <button type="submit">Gérer Stage</button>
+    </form>
+
+    <form action="{% url 'gérer_profil' %}" method="get">
+        <button type="submit">Gérer Profil</button>
+    </form>
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Déconnexion</button>
+    </form>
+    
+</body>
+</html>
+

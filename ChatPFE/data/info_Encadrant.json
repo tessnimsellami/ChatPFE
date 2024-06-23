@@ -1,0 +1,59 @@
+{
+    "Encadrant": [
+        {
+            "cin": "00224455",
+            "prenom": "raja",
+            "nom": "hanafi",
+            "niveau": "Master",
+            "spécialité": "bvg",
+            "expérience": "8",
+            "ville": "bou selem",
+            "email": "hanafiraja@gmail.com",
+            "quota": 5
+        },
+        {
+            "cin": "11778899",
+            "prenom": "mouna",
+            "nom": "soussi",
+            "niveau": "Licence",
+            "spécialité": "gf",
+            "expérience": "5",
+            "ville": "béja",
+            "email": "mounasoussi78@gmail.com",
+            "quota": 3
+        },
+        {
+            "cin": "99887744",
+            "prenom": "John",
+            "nom": "Doe",
+            "niveau": "Master",
+            "spécialité": "Data Science",
+            "expérience": 10,
+            "ville": "Paris",
+            "email": "john.doe@example.com",
+            "quota": 5
+        },
+        {
+            "cin": "99778866",
+            "prenom": "John",
+            "nom": "Yoff",
+            "niveau": "Master",
+            "spécialité": "Data",
+            "expérience": 9,
+            "ville": "Lyon",
+            "email": "john.yoff@example.com",
+            "quota": 4
+        },
+        {
+            "cin": "55665523",
+            "prenom": "Jane",
+            "nom": "Smith",
+            "niveau": "Licence",
+            "spécialité": "Développement Web",
+            "expérience": 8,
+            "ville": "Lyon",
+            "email": "jane.smith@example.com",
+            "quota": 4
+        }
+    ]
+}

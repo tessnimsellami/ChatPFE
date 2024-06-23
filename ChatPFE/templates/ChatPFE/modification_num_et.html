@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Numéro de Téléphone</title>
+</head>
+<body>
+    <h2>Modifier Numéro de Téléphone</h2>
+    <form method="post" action="{% url 'modification_num_et' %}">
+        {% csrf_token %}
+        <label for="new-phone-number">Nouveau Numéro de Téléphone:</label>
+        <input type="text" id="new-phone-number" name="new_phone_number" required>
+        <button type="submit">Modifier</button>
+    </form>
+</body>
+</html>

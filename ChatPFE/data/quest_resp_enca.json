@@ -1,0 +1,397 @@
+{
+    "intents": [
+        {
+            "tag": "a plus",
+            "patterns": [
+                "Au revoir",
+                "À plus tard",
+                "Au revoir",
+                "Disparais",
+                "À la prochaine",
+                "bbye"
+            ],
+            "responses": [
+                "À bientôt!"
+            ]
+        },
+        {
+            "tag": "hallo",
+            "patterns": [
+                "Salut",
+                "Comment ça va",
+                "Bonjour",
+                "Bonne journée",
+                "Namaste",
+                "yo"
+            ],
+            "responses": [
+                "Salut, comment puis-je vous aider ?"
+            ]
+        },
+        {
+            "tag": "remerciment",
+            "patterns": [
+                "Merci",
+                "Je vous remercie",
+                "C'est utile",
+                "Génial, merci",
+                "Merci de m'aider"
+            ],
+            "responses": [
+                "Avec plaisir"
+            ]
+        },
+        {
+            "tag": "option",
+            "patterns": [
+                "Comment pourrais-tu m'aider?",
+                "Que peux-tu faire?",
+                "Quelle aide fournissez-vous?",
+                "Comment peux-tu être utile?",
+                "Quel support est offert"
+            ],
+            "responses": [
+                "Je suis un chatbot à usage général. Mes capacités sont : \n 1. Je peux discuter avec vous. Essayez de me demander des information apropos les encadrant ou les sociétés ou les stages ! \n 2. Demandez-moi la date et l'heure \n 3. Je peux faire une recherche sur Google pour vous. Utilisez le format google : votre requête \n 4. Je peux obtenir la météo actuelle pour n'importe quelle ville. Utilisez le format météo : nom de la ville \n 5. Je peux vous donner les 10 dernières nouvelles tendances en Inde. Utilisez les mots-clés 'Dernières nouvelles' \n 6. Je peux vous donner les 10 chansons les plus tendances dans le monde. Tapez 'chansons' \n 7. Je peux définir un minuteur pour vous. Entrez 'définir un minuteur : minutes à chronométrer' \n 8. Je peux obtenir les statistiques Covid actuelles pour n'importe quel pays. Utilisez 'covid 19 : monde' ou 'covid 19 : nom du pays' \n Pour des suggestions pour m'aider à m'améliorer, envoyez un e-mail à ted.thedlbot.suggestions@gmail.com . Merci !! "
+            ]
+        },
+        {
+            "tag": "Identitée",
+            "patterns": [
+                "Qui es-tu",
+                "que es-tu"
+            ],
+            "responses": [
+                "Je suis ChatPFE, un chatbot pour t'aider a choisir un encadrant une société et un sujet."
+            ]
+        },
+        {
+            "tag": "quoi",
+            "patterns": [
+                "Quoi de neuf",
+                "Comment vas-tu",
+                "Comment ça va?"
+            ],
+            "responses": [
+                "Tout va bien.Et toi?"
+            ]
+        },
+        {
+            "tag": "insult",
+            "patterns": [
+                "tu es stupide",
+                "tais-toi",
+                "Baka",
+                "idiot"
+            ],
+            "responses": [
+                "Eh bien, ça fait mal :("
+            ]
+        },
+        {
+            "tag": "activité",
+            "patterns": [
+                "que fais-tu",
+                "que fais-tu"
+            ],
+            "responses": [
+                "Je vous parle, bien sûr!"
+            ]
+        },
+        {
+            "tag": "exclaim",
+            "patterns": [
+                "Génial",
+                "Super",
+                "Je sais",
+                "ok",
+                "ouais"
+            ],
+            "responses": [
+                "Ouais!"
+            ]
+        },
+        {
+            "tag": "appreciation",
+            "patterns": [
+                "Tu es génial",
+                "tu es le meilleur",
+                "tu es super",
+                "tu es bon"
+            ],
+            "responses": [
+                "Merci!"
+            ]
+        },
+        {
+            "tag": "sympatique",
+            "patterns": [
+                "c'était sympa de parler avec toi",
+                "bonne discussion"
+            ],
+            "responses": [
+                "C'était sympa de parler avec vous aussi! Revenez bientôt!"
+            ]
+        },
+        {
+            "tag": "non",
+            "patterns": [
+                "non",
+                "non"
+            ],
+            "responses": [
+                "d'accord"
+            ]
+        },
+        {
+            "tag": "greetreply",
+            "patterns": [
+                "je vais bien",
+                "Très bien",
+                "je vais bien",
+                " Je vais bien",
+                "bon"
+            ],
+            "responses": [
+                "Content de savoir!"
+            ]
+        },
+        {
+            "tag": "suggestion",
+            "patterns": [
+                "tu es inutile",
+                "inutile",
+                "suggérer",
+                "suggestions",
+                "tu es mauvais"
+            ],
+            "responses": [
+                "Veuillez envoyer vos suggestions par e-mail à ChatPFE.suggestions@gmail.com. Merci de m'aider à m'améliorer!"
+            ]
+        },
+        {
+            "tag": "moyenne",
+            "patterns": [
+                "Quelle est la moyenne de [PRENOM] [NOM] ?",
+                "Moyenne de [NOM] [PRENOM]",
+                "Note de [NOM] [PRENOM]",
+                "Note [NOM] [PRENOM]"
+            ],
+            "responses": [
+                "La moyenne de [FULL_NAME] est [MOYENNE]."
+            ]
+        },
+        {
+            "tag": "ville",
+            "patterns": [
+                "ville [NOM] [PRENOM]",
+                "Dans quelle ville habite [PRENOM] [NOM] ?",
+                "Où réside [NOM] [PRENOM] ?",
+                "Localisation de [PRENOM] [NOM]",
+                "Où habite [PRENOM] [NOM] ?",
+                "Où est localisée la société [SOCIETE] ?",
+                "Localisation de [SOCIETE]",
+                "Où se trouve la société [SOCIETE] ?",
+                "L'emplacement de [SOCIETE]",
+                "Où se trouve [SOCIETE] ?",
+                "ville [NOM] [PRENOM]",
+                "ville [SOCIETE]"
+            ],
+            "responses": [
+                "[FULL_NAME] se trouve à [VILLE]."
+            ]
+        },
+        {
+            "tag": "niveau",
+            "patterns": [
+                "Quel est le niveau d'études de [PRENOM] [NOM] ?",
+                "Quel est le cursus scolaire de [NOM] [PRENOM] ?",
+                "Niveau d'études de [PRENOM] [NOM]"
+            ],
+            "responses": [
+                "[FULL_NAME] est en [NIVEAU]."
+            ]
+        },
+        {
+            "tag": "telephone",
+            "patterns": [
+                "Quel est le numéro de téléphone de [PRENOM] [NOM] ?",
+                "Numéro de téléphone de [NOM] [PRENOM]",
+                "Numéro [PRENOM] [NOM]",
+                "Téléphone [NOM] [PRENOM]",
+                "Quel est le numéro de téléphone de la société [SOCIETE] ?",
+                "Téléphone de la société [SOCIETE]",
+                "Numéro de la société [SOCIETE]",
+                "Quel est le numéro de téléphone de [SOCIETE] ?",
+                "Téléphone de [SOCIETE]",
+                "Numéro téléphone de [SOCIETE]",
+                "Téléphone [SOCIETE]",
+                "Numéro [NOM] [PRENOM]",
+                "Téléphone [NOM] [PRENOM]",
+                "Numéro [SOCIETE]"
+            ],
+            "responses": [
+                "Le numéro de téléphone de [FULL_NAME] est [TELEPHONE]."
+            ]
+        },
+        {
+            "tag": "email",
+            "patterns": [
+                "Quelle est l'adresse e-mail de [PRENOM] [NOM] ?",
+                "E-mail de [NOM] [PRENOM]",
+                "Adresse e-mail de [PRENOM] [NOM]",
+                "Quelle est l'adresse e-mail de la société [SOCIETE] ?",
+                "E-mail de la société [SOCIETE]",
+                "Adresse e-mail de la société [SOCIETE]",
+                "E-mail [SOCIETE]",
+                "Adresse e-mail [SOCIETE]",
+                "e-mail [PRENOM] [NOM]",
+                "[SOCIETE] e-mail"
+            ],
+            "responses": [
+                "L'adresse e-mail de [FULL_NAME] est [EMAIL]."
+
+            ]
+        },
+        {
+            "tag": "linkedin",
+            "patterns": [
+                "Quel est le profil LinkedIn de [PRENOM] [NOM] ?",
+                "Profil LinkedIn de [NOM] [PRENOM]",
+                "Quel est le profil LinkedIn de [SOCIETE] ?",
+                "Profil LinkedIn de [SOCIETE]",
+                "Profil LinkedIn de [PRENOM] [NOM]",
+                "LinkedIn [PRENOM] [NOM].",
+                "[SOCIETE] LinkedIn ?"
+            ],
+            "responses": [
+                "Le profil LinkedIn de [FULL_NAME] est [LINKEDIN]."
+            ]
+        },
+        {
+            "tag": "preference",
+            "patterns": [
+                "Quel est la preference [PRENOM] [NOM] ?",
+                "Quel domaine préfère [PRENOM] [NOM] ?"
+            ],
+            "responses": [
+                "[FULL_NAME] préfère le domaine [PREFERENCE]."
+            ]
+        },
+        {
+            "tag": "description_stage",
+            "patterns": [
+                "Quel est le sujet du stage déjà travaillé dans le domaine de [DOMAINE] ?",
+                "Les sujets dans [DOMAINE] ?"
+            ],
+            "responses": [
+                "Le sujet du stage dans le domaine de [DOMAINE] est [ID_SUJET] : [DESCRIPTION]."
+            ]
+        },
+        {
+            "tag": "societe_stage",
+            "patterns": [
+                "Quelle est la société du stage [ID_SUJET] ?",
+                "Société de [ID_SUJET]",
+                "Quelle entreprise pour le stage [ID_SUJET] ?",
+                "Dans quelle entreprise a été passé ce sujet [ID_SUJET] ?"
+            ],
+            "responses": [
+                "La société du stage [ID_SUJET] est [SOCIETE]."
+            ]
+        },
+        {
+            "tag": "specialite",
+            "patterns": [
+                "Quelle est la spécialité de [PRENOM] [NOM] ?",
+                "Spécialité de [PRENOM] [NOM]",
+                "Domaine de [PRENOM] [NOM]",
+                "Quelle spécialité pour l'étudiant [PRENOM] [NOM] ?",
+                "Quelle est le domaine de [SOCIETE] ?",
+                "Quelle est la spécialité de [SOCIETE] ?",
+                "spécialité [SOCIETE]",
+                "[SOCIETE] domaine"
+            ],
+            "responses": [
+                "La spécialité de [FULL_NAME] est [SPECIALITE]."
+            ]
+        },
+        {
+            "tag": "remarque_stage",
+            "patterns": [
+                "Quelle est la mention du sujet [ID_SUJET] ?",
+                "mention [ID_SUJET]"
+            ],
+            "responses": [
+                "La remarque du stage [ID_SUJET] est [REMARQUE]."
+            ]
+        },
+        {
+            "tag": "mode_travail_societe",
+            "patterns": [
+                "Quel est le mode de travail de la société [SOCIETE] ?",
+                "Mode de travail de [SOCIETE]",
+                "Travail de [SOCIETE]",
+                "mode [SOCIETE]",
+                "Société [SOCIETE] en ligne ou présentiel",
+                "Entreprise [SOCIETE] travaille en présentiel ou en ligne ?"
+            ],
+            "responses": [
+                "La société [SOCIETE] travaille en mode [MODE_TRAVAIL]."
+            ]
+        },
+        {
+            "tag": "localisation_etudiant",
+            "patterns": [
+                "Quels sont les étudiants qui habitent à [VILLE] ?",
+                "les étudiants qui se trouvent à [VILLE] ?"
+            ],
+            "responses": [
+                "Les encadrants qui habitent à [VILLE] sont [FULL_NAME]."
+            ]
+        },
+        {
+            "tag": "societe_domaine",
+            "patterns": [
+                "Quelles sont les sociétés qui proposent des sujets dans le domaine de [DOMAINE] ?",
+                "Quelles entreprises travaillent dans le domaine de [DOMAINE] ?",
+                "Quelles sociétés acceptent des sujets dans [DOMAINE] ?"
+            ],
+            "responses": [
+                "Les sociétés dont le domaine de [DOMAINE] sont [SOCIETES]."
+            ]
+        },
+        {
+            "tag": "comparaison_etudiant",
+            "patterns": [
+                "Quel est le meilleur étudiant parmi [LISTE_ETUDIANTS] ?",
+                "Parmi ces étudiants, qui a la meilleure moyenne ?"
+            ],
+            "responses": [
+                "L'étudiant avec la meilleure moyenne est [FULL_NAME] avec une moyenne de [MOYENNE]"
+            ]
+        },
+        {
+            "tag": "comparaison_sujet",
+            "patterns": [
+                "Quel est le sujet qui a la meilleure remarque parmi [LISTE_SUJETS] ?",
+                "Quel sujet a obtenu la meilleure note parmi [LISTE_SUJETS] ?"
+            ],
+            "responses": [
+                "Le sujet [ID_SUJET] a obtenu la meilleure remarque."
+            ]
+        },
+        {
+            "tag": "sout_rmq",
+            "patterns": [
+                "Quelles sont les remarques obtenues pour [ID_SUJET] ?",
+                "Remarque pour [ID_SUJET] ?",
+                "remarque [ID_SUJET]",
+                "[ID_SUJET] commentaire",
+                "observation [ID_SUJET]"
+            ],
+            "responses": [
+                "Les remarques pour [ID_SUJET] sont [REMARQUES]."
+            ]
+        }
+    ]
+}

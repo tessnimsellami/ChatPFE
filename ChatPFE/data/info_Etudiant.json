@@ -1,0 +1,76 @@
+{
+    "Etudiant": [
+        {
+            "cin": "14141414",
+            "prenom": "soulayma",
+            "nom": "aloui",
+            "moyenne": 18,
+            "ville": "Béja",
+            "niveau": "ingénieur",
+            "telephone": "11223344",
+            "email": "soulayma@gmail.com",
+            "linkedin": "",
+            "préférence": ""
+        },
+        {
+            "cin": "14121224",
+            "prenom": "Tessnim",
+            "nom": "Sellami",
+            "moyenne": 19,
+            "ville": "béja",
+            "niveau": "M2",
+            "telephone": "53530022",
+            "email": "charlie.leblanc@example.com",
+            "linkedin": "https://linkedin.com/in/tass",
+            "préférence": "Cybersécurité"
+        },
+        {
+            "cin": "14131313",
+            "prenom": "nesrin",
+            "nom": "kacem",
+            "moyenne": 17,
+            "ville": "tunis",
+            "niveau": "licence",
+            "telephone": "20202020",
+            "email": "nesrin@gmail.com",
+            "linkedin": "",
+            "préférence": ""
+        },
+        {
+            "cin": "74532845",
+            "prenom": "Alice",
+            "nom": "Dupont",
+            "moyenne": 15.2,
+            "ville": "Paris",
+            "niveau": "M1",
+            "telephone": "0102030405",
+            "email": "alice.dupont@example.com",
+            "linkedin": "https://linkedin.com/in/alicedupont",
+            "préférence": "Data Science"
+        },
+        {
+            "cin": "22119957",
+            "prenom": "Bob",
+            "nom": "Mart",
+            "moyenne": 15,
+            "ville": "Ly",
+            "niveau": "L4",
+            "telephone": "0607080910",
+            "email": "b.m@example.com",
+            "linkedin": "",
+            "préférence": "Développement mobile"
+        },
+        {
+            "cin": "42221155",
+            "prenom": "Charlie",
+            "nom": "Leblanc",
+            "moyenne": 16.5,
+            "ville": "Marseille",
+            "niveau": "M2",
+            "telephone": "0112233445",
+            "email": "charlie.leblanc@example.com",
+            "linkedin": "https://linkedin.com/in/charlieleblanc",
+            "préférence": "Cybersécurité"
+        }
+    ]
+}
